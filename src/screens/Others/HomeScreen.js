@@ -76,6 +76,46 @@ const HomeScreen = (props) => {
               onPress={()=> props.navigation.navigate('Faq') } >
               <Text style={styles.text}>FAQ</Text>
           </TouchableOpacity>
+          <TouchableOpacity
+              style={styles.btn}
+              onPress={()=> props.navigation.navigate('Login') } >
+              <Text style={styles.text}>Car BN (Login)</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+              style={styles.btn}
+              onPress={()=> props.navigation.navigate('Profile') } >
+              <Text style={styles.text}>Car BN (MyProfile)</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+              style={styles.btn}
+              onPress={()=> props.navigation.navigate('Edit') } >
+              <Text style={styles.text}>Car BN (EditScreen)</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+              style={styles.btn}
+              onPress={()=> props.navigation.navigate('Contact') } >
+              <Text style={styles.text}>Car BN (Contact)</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+              style={styles.btn}
+              onPress={()=> props.navigation.navigate('TandC') } >
+              <Text style={styles.text}>Car BN (Terms & Conditions)</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+              style={styles.btn}
+              onPress={()=> props.navigation.navigate('Privacy') } >
+              <Text style={styles.text}>Car BN (Privacy Policy)</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+              style={styles.btn}
+              onPress={()=> props.navigation.navigate('Bidding') } >
+              <Text style={styles.text}>Car BN (AuctionLiveBidding)</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+              style={styles.btn}
+              onPress={()=> props.navigation.navigate('HomePage') } >
+              <Text style={styles.text}>Car BN (HomePage)</Text>
+          </TouchableOpacity>
         </ScrollView>
         </SafeAreaView>
   );

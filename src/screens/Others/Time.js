@@ -6,7 +6,7 @@ const Time =()=>{
     return(
         <View style={{backgroundColor: 'black', flex: 1,}}>
             <View style={styles.one}>
-                <Image style={styles.img} source={require('../../asserts/Timer.jpg')} />
+                <Image style={styles.img} source={require('../../../asserts/Timer.jpg')} />
             </View>
             <View style={{flexDirection: 'row', marginVertical: 40, justifyContent: 'space-between', marginHorizontal: 80,alignItems: 'center', }}>
                 <Text style={styles.text}>4</Text>

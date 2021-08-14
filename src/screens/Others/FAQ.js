@@ -7,11 +7,8 @@ const FAQ = ()=>{
     const [isSelected, setIS] = useState(false);
 
     _onpress =(id) => {
-        return(
-            setIS(prev=> !prev)
-        )
-        
-    };
+        setIS(prev=> !prev) 
+    }
      
     ListItem = ({item})=>{
             return (
