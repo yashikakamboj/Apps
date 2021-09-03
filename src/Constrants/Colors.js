@@ -1,4 +1,7 @@
 export default{
-    Red: '#c4302b',
-    Blue: '#1f3d7a',
+    Red: '#EA002A',
+    Blue: '#213884',
+    Green: '#21C948',
+    LightGrey: '#565656',
+    DarkGrey: '#414141',
 };

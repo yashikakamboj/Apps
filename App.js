@@ -18,12 +18,15 @@ import Popup from './src/screens/Others/Popup';
 import Time from './src/screens/Others/Time';
 import Login from './src/screens/CarBN/Login';
 import MyProfile from './src/screens/CarBN/MyProfile';
-import EditScreen from './src/screens/CarBN/EditScren';
+import EditScreen from './src/screens/CarBN/EditScreen';
 import Contact from './src/screens/CarBN/Contact';
 import TandC from './src/screens/CarBN/TandC';
 import PrivacyPolicy from './src/screens/CarBN/PrivacyPolicy';
 import AuctionLiveBidding from './src/screens/CarBN/AuctionLiveBidding';
 import HomePage from './src/screens/CarBN/HomePage';
+import Payments from './src/screens/CarBN/Payments';
+import Notifications from './src/screens/CarBN/Notifications';
+import SavedCar from './src/screens/CarBN/SavedCar';
 
 const Navigation = createStackNavigator(
   {
@@ -50,6 +53,9 @@ const Navigation = createStackNavigator(
         Privacy: PrivacyPolicy,
         Bidding: AuctionLiveBidding,
         HomePage: HomePage,
+        Payments: Payments,
+        Notifications: Notifications,
+        car1: SavedCar,
   },
   {
         initialRouteName: "Home",

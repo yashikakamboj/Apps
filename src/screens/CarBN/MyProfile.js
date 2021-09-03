@@ -18,7 +18,7 @@ const MyProfile =()=>{
         return(
             <View style={styles.row}>
                 <View style={styles.subRow}>
-                    <Image style={styles.img} source={{uri: 'https://i0.wp.com/short-biography.com/wp-content/uploads/choi-minho/Choi-Minho.jpg?fit=853%2C853&ssl=1'}}/>
+                    <Image style={styles.img} source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb8sfGC0G3nRm_ntTwhXdsaLR8WYHwB9E4sA&usqp=CAU'}}/>
                     <View style={styles.column}>
                         <Text style={styles.name}>Manish Sharma</Text>
                         <TouchableOpacity style={styles.rating}>
@@ -27,7 +27,7 @@ const MyProfile =()=>{
                         </TouchableOpacity>
                     </View>
                 </View>
-                <AntDesign name="edit" color="#1f3d7a" size={30} style={styles.edit}/>
+                <Image style={styles.icon} source={require('../../../asserts/ic_border_color_24px.png')} />
             </View>
         )
     }
@@ -37,15 +37,15 @@ const MyProfile =()=>{
             <View>
                 <Text style={styles.redText}>Profile</Text>
                 <Text style= {styles.blueText}>Phone no.</Text>
-                <TextInput style= {styles.input} />
+                <Text style= {styles.input}>1234567890</Text>
                 <Text style= {styles.blueText}>Email</Text>
-                <TextInput style= {styles.input} />
+                <Text style= {styles.input}>abc@gmail.com</Text>
                 <Text style= {styles.blueText}>Flat no./ Street name</Text>
-                <TextInput style= {styles.input} />
+                <Text style= {styles.input}>1122</Text>
                 <Text style= {styles.blueText}>City</Text>
-                <TextInput style= {styles.input} />
+                <Text style= {styles.input}>Karnal</Text>
                 <Text style= {styles.blueText}>State</Text>
-                <TextInput style= {styles.input} />
+                <Text style= {styles.input}>Haryana</Text>
             </View>
         )
     }
@@ -164,6 +164,10 @@ const styles = StyleSheet.create({
     switch:{
         justifyContent: 'space-between',
         flexDirection: 'row'
+    },
+    icon:{
+        height:25,
+        width: 25
     }
 })
 

@@ -12,7 +12,7 @@ const FormScreen = ()=>{
                 <FontAwesome.Button name="bell" size={25} backgroundColor="#000" onPress={() => {}}></FontAwesome.Button>
             </View>
             <View style={styles.two}>
-                <Image style={styles.img} source={{uri: 'https://i0.wp.com/short-biography.com/wp-content/uploads/choi-minho/Choi-Minho.jpg?fit=853%2C853&ssl=1'}}/>
+                <Image style={styles.img} source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb8sfGC0G3nRm_ntTwhXdsaLR8WYHwB9E4sA&usqp=CAU'}}/>
             </View>
             <View style={{alignItems: 'flex-end', marginRight: 25}}>
                 <Icon name="edit" color={'#fff'} size={28}/>

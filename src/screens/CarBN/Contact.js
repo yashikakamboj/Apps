@@ -10,12 +10,14 @@ const Contact =()=>{
     const [List, setList] = useState(false);
     const data = [{key: 'One'}, {key: 'Two'}, {key: 'Three'}];
 
-    const renderitems = ({item}) => 
+    const renderitems = ({item}) =>{
+        return(
         <TouchableOpacity style={styles.listitem}>
             <Text style={styles.bigBlueText}>
                 {item.key}
             </Text>
         </TouchableOpacity>
+        )}
 
     const Card1 =()=>{
         return(

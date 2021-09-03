@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, ScrollView, Dimensions} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import ImagePicker from 'react-native-image-crop-picker';
-import Colors from '../../../src/Constrants/Colors.js';
+import Colors from '../../Constrants/Colors.js';
+import { Avatar } from 'react-native-elements';
 
 const EditScreen =()=>{
 
@@ -21,10 +22,14 @@ const EditScreen =()=>{
     const UploadImage =()=>{
         return(
             <View>
-                <TouchableOpacity style={styles.camera} onPress={chooseFromGallery}>
-                    <MaterialCommunityIcons name="camera-plus" size={22} color={Colors.Red}/>
-                </TouchableOpacity>
-                <Image style={styles.img} source={{uri: image}}/>
+                <Avatar
+                    rounded
+                    onPress={chooseFromGallery}
+                    activeOpacity={0.7}
+                    source={{uri: image}}
+                    size={80}
+                />
+                <Image style={styles.icon} source={require('../../../asserts/camera.png')} />
             </View>
         )
     }
@@ -51,10 +56,10 @@ const EditScreen =()=>{
     }
 
     return(
-        <View style={styles.main}> 
+        <ScrollView style={styles.main}> 
 
             <UploadImage />
-            <Form />           
+            <Form />
 
             <View style={styles.row}>
                 <TouchableOpacity style={styles.btn1}>
@@ -65,7 +70,7 @@ const EditScreen =()=>{
                 </TouchableOpacity>
             </View>
             
-        </View>
+        </ScrollView>
     )
 }
 
@@ -96,7 +101,8 @@ const styles = StyleSheet.create({
     row:{
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        top: Dimensions.get('screen').height*0.2
+        marginTop: 70,
+        marginBottom: 20
     },
     btn1:{
         backgroundColor: Colors.Blue,
@@ -123,8 +129,16 @@ const styles = StyleSheet.create({
         height:30,
         position:"absolute",
         zIndex: 1,
-        padding: 3
+        padding: 0,
     },
+    icon:{
+        top:7,
+        left: 60,
+        width:40,
+        height:40,
+        position:"absolute",
+        zIndex: 1,
+    }
 })
 
 export default EditScreen;
