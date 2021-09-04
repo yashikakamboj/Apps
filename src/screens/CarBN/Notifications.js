@@ -3,6 +3,7 @@ import { FlatList } from 'react-native';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, Switch, ScrollView} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Colors from '../../Constrants/Colors.js';
+import images from '../../Constrants/images';
 
 const Notifications =()=>{
 
@@ -21,7 +22,7 @@ const Notifications =()=>{
         return(
             <TouchableOpacity style={styles.container}>
                 <View style={styles.row}>
-                    <Image style={styles.icon} source={require('../../../asserts/ic_notifications_activasdasdasde_24px.png')} />
+                    <Image style={styles.icon} source={images.bell} />
                     <Text style={item.color ? styles.green : styles.red} >{item.text}</Text>
                     <Text style={styles.grey}>{item.time}</Text>
                 </View>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, Dimensions, ScrollView, FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import Colors from '../../../src/Constrants/Colors.js';
+import images from '../../../src/Constrants/images'
 
 const SavedCar = () => {
 
@@ -17,16 +18,16 @@ const SavedCar = () => {
             <View style={styles.outerbox}>
                 
                 <View style={styles.row}>
-                    {item.badges? <Image style={styles.stemp1} source={require('../../../asserts/badges.png')}/>: null}
-                    {item.warranty? <Image style={styles.stemp2} source={require('../../../asserts/warranty.png')}/>: null}
-                    {item.threedays? <Image style={styles.stemp3} source={require('../../../asserts/3days.png')}/>: null}
+                    {item.badges? <Image style={styles.stemp1} source={images.icon14}/>: null}
+                    {item.warranty? <Image style={styles.stemp2} source={images.icon15}/>: null}
+                    {item.threedays? <Image style={styles.stemp3} source={images.icon16}/>: null}
                 </View>
 
-                <Image style={styles.image} source={require('../../../asserts/cardImage.png')} />
+                <Image style={styles.image} source={images.car} />
                 
                 <TouchableOpacity style={styles.likebutton} onPress={()=>{ setLike(!like) }}>
-                    {like ? <Image style={styles.like} source={require('../../../asserts/Group88.png')}/>
-                    : <Image style={styles.like} source={require('../../../asserts/Group87.png')}/> }
+                    {like ? <Image style={styles.like} source={images.icon17}/>
+                    : <Image style={styles.like} source={images.icon18}/> }
                 </TouchableOpacity>
 
                 <View style={styles.innerbox}>
@@ -34,7 +35,7 @@ const SavedCar = () => {
                     <Text style={styles.paragraph}> {item.paragraph}</Text>
                     <View style={styles.row}>
                         <Text style={styles.Blue}> {item.price}</Text>
-                        {item.calculator? <Image style={styles.calculator} source={require('../../../asserts/475497.png')}/> : null}
+                        {item.calculator? <Image style={styles.calculator} source={images.icon19}/> : null}
                     </View>
                 </View>
             </View>

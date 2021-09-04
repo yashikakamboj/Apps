@@ -4,8 +4,8 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { SliderBox } from "react-native-image-slider-box";
 import Colors from '../../../src/Constrants/Colors.js';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-//import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import images from '../../../src/Constrants/images'
 
 const RentalCar =()=>{
 
@@ -69,28 +69,28 @@ const RentalCar =()=>{
                 <Text style={styles.bluemedium}>Overview</Text>
                 <View style={styles.wrap}>
                     <View style={styles.item}>
-                        <Image style={styles.icon} source={require('../../../asserts/360_F_347134350_dhjJjzA1fuGvXOyNgCJYfOEby04ljhEC-removebg-preview.png')}/>
+                        <Image style={styles.icon} source={images.icon1}/>
                         <Text>Sedan</Text>
                     </View>
                     <View style={styles.item}>
-                        <Image style={styles.icon} source={require('../../../asserts/1265247-200-removebg-preview.png')}/>
+                        <Image style={styles.icon} source={images.icon2}/>
                         <Text>Automatic</Text>
                     </View>
                     <View style={styles.item}>
-                        <Image style={styles.icon} source={require('../../../asserts/223394.png')}/>
+                        <Image style={styles.icon} source={images.icon3}/>
                         <Text>Petrol</Text>
                     </View>
                 
                     <View style={styles.item}>
-                        <Image style={styles.icon} source={require('../../../asserts/477127.png')}/>
+                        <Image style={styles.icon} source={images.icon4}/>
                         <Text>3240 CC</Text>
                     </View>
                     <View style={styles.item}>
-                        <Image style={styles.icon} source={require('../../../asserts/2310616-200.png')}/>
+                        <Image style={styles.icon} source={images.icon5}/>
                         <Text>8 Kmpl</Text>
                     </View>
                     <View style={styles.item}>
-                        <Image style={styles.icon} source={require('../../../asserts/789-7898305_centre-armrest-between-front-seats-car-seat-icon.png')}/>
+                        <Image style={styles.icon} source={images.icon6}/>
                         <Text>4 seats</Text>
                     </View>
                 </View>
@@ -134,18 +134,18 @@ const RentalCar =()=>{
             <ImageCard />
 
             <View style={styles.row}>
-                <Image style={styles.stemp1} source={require('../../../asserts/badges.png')}/>
-                <Image style={styles.stemp2} source={require('../../../asserts/warranty.png')}/>
-                <Image style={styles.stemp3} source={require('../../../asserts/3days.png')}/>
-                <Image style={styles.stemp4} source={require('../../../asserts/Group85.png')}/>
+                <Image style={styles.stemp1} source={images.icon7}/>
+                <Image style={styles.stemp2} source={images.icon8}/>
+                <Image style={styles.stemp3} source={images.icon9}/>
+                <Image style={styles.stemp4} source={images.icon10}/>
             </View>
             
             <View style={styles.container}>
                 <View style={styles.row}>
                     <Text style={styles.grey}>2018 Toyata C-HR 1.8</Text>
                     <TouchableOpacity style={styles.likebutton} onPress={()=>{ setLike(!like) }}>
-                        {like ? <Image style={styles.like} source={require('../../../asserts/Group88.png')}/>
-                        : <Image style={styles.like} source={require('../../../asserts/Group87.png')}/> }
+                        {like ? <Image style={styles.like} source={images.icon11}/>
+                        : <Image style={styles.like} source={images.icon12}/> }
                     </TouchableOpacity>
                 </View>
 
@@ -155,7 +155,7 @@ const RentalCar =()=>{
                         <Text style={styles.smallblue}>From</Text>
                         <TouchableOpacity style={styles.btn}>
                             <Text style={styles.smallgrey}>dd-mm-yy</Text>
-                            <Image style={styles.calculator} source={require('../../../asserts/475497.png')}/>
+                            <Image style={styles.calculator} source={images.icon13}/>
                         </TouchableOpacity>
                     </View>
                     <View>

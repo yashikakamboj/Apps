@@ -1,0 +1,26 @@
+const images ={
+    car: require('../../asserts/cardImage.png'),
+    bell: require('../../asserts/ic_notifications_activasdasdasde_24px.png'),
+    wallet: require('../../asserts/ic_account_balance_wallet_24px.png'),
+    icon1: require('../../asserts/360_F_347134350_dhjJjzA1fuGvXOyNgCJYfOEby04ljhEC-removebg-preview.png'),
+    icon2: require('../../asserts/1265247-200-removebg-preview.png'),
+    icon3: require('../../asserts/223394.png'),
+    icon4: require('../../asserts/477127.png'),
+    icon5: require('../../asserts/2310616-200.png'),
+    icon6: require('../../asserts/789-7898305_centre-armrest-between-front-seats-car-seat-icon.png'),
+    icon7: require('../../asserts/badges.png'),
+    icon8: require('../../asserts/warranty.png'),
+    icon9: require('../../asserts/3days.png'),
+    icon10: require('../../asserts/Group85.png'),
+    icon11: require('../../asserts/Group88.png'),
+    icon12: require('../../asserts/Group87.png'),
+    icon13: require('../../asserts/475497.png'),
+    icon14: require('../../asserts/badges.png'),
+    icon15: require('../../asserts/warranty.png'),
+    icon16: require('../../asserts/3days.png'),
+    icon17: require('../../asserts/Group88.png'),
+    icon18: require('../../asserts/Group87.png'),
+    icon19: require('../../asserts/475497.png'),
+
+}
+export default images;

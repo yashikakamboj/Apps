@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
         marginHorizontal: 55,
         marginVertical: 200,
         borderRadius: 20,
-        
     },
     container:{
         paddingVertical: 10,

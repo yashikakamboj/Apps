@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, FlatList} from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView, FlatList, Modal, Dimensions, TextInput} from 'react-native';
 import { SliderBox } from "react-native-image-slider-box";
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -7,6 +7,9 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import Colors from '../../../src/Constrants/Colors.js';
 
 const AuctionLiveBidding =()=>{
+
+    const [X, setX] = useState(false);
+    const [value, setValue] = useState(0);
 
     const images= [
             "https://source.unsplash.com/1024x768/?nature",
@@ -70,7 +73,7 @@ const AuctionLiveBidding =()=>{
         return(
             <View style={[styles.row, {alignItems: 'center'}]}>
                     <View style={styles.row}>
-                        <Image style={styles.img} source={{uri: 'https://i0.wp.com/short-biography.com/wp-content/uploads/choi-minho/Choi-Minho.jpg?fit=853%2C853&ssl=1'}}/>
+                        <Image style={styles.img} source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb8sfGC0G3nRm_ntTwhXdsaLR8WYHwB9E4sA&usqp=CAU'}}/>
                         <View>
                             <Text style={styles.black}>Mathew Hiddelson</Text>
                             <View style={[styles.row, {justifyContent: 'flex-start'}]}>
@@ -112,6 +115,27 @@ const AuctionLiveBidding =()=>{
         )
     }
 
+    const Popup =()=>{
+        return(
+            <Modal transparent={true} visible={X}>
+                    <View style={styles.popup}>
+                        <AntDesign name="close" color={Colors.Red} size={25} style={styles.close} onPress={()=>{setX(false)}}/>
+                        <Text style={styles.bluebig}>Place A Bid</Text>
+                        <Text style={styles.redsmall}>Current Bid: {value}</Text>
+                        <View style={[styles.row, {justifyContent: 'space-evenly', marginTop: 20, alignItems:'center', alignContent : 'center'}]}>
+                            <AntDesign name="minussquare" color={Colors.Blue} size={30}  onPress={()=>{setValue(prevCount => parseInt(prevCount) - 100)}}/>
+                            <TextInput value={value} keyboardType="numeric" style={styles.input} onChangeText={e=> setValue(e)} />
+                            <AntDesign value={value} name="plussquare" color={Colors.Blue} size={30} onPress={()=>{setValue(prevCount => parseInt(prevCount) + 100)}}/>
+                        </View>
+                        <TouchableOpacity style={styles.btn1}>
+                            <Text style={styles.text}>Confirm</Text>
+                        </TouchableOpacity>
+                        <Text style={styles.grey}>Note: If you do not purchase, BND 100 will be fortifield.</Text>
+                    </View>
+                </Modal>
+        )
+    }
+
     return(
         <ScrollView>
             <ImageCard />
@@ -132,9 +156,12 @@ const AuctionLiveBidding =()=>{
                 </View>
                 
                 <Text style={styles.black}>Note: 5 days money back guarantee!</Text>
-                <TouchableOpacity style={styles.btn1}>
+                <TouchableOpacity style={styles.btn1} onPress={()=>{setX(true)}}>
                     <Text style={styles.text}>Place Bid !</Text>
                 </TouchableOpacity>
+
+                <Popup />
+                
             </View>
         </ScrollView>
 
@@ -275,6 +302,49 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 18
     },
+    popup:{
+        backgroundColor: 'white',
+        height: Dimensions.get('screen').height/3,
+        width: Dimensions.get("screen").width-40,
+        borderRadius: 10,
+        alignSelf: 'center',
+        marginVertical: Dimensions.get('screen').height/3,
+        backgroundColor: '#F5F5F5',
+        paddingVertical: 15,
+        paddingHorizontal: 15,
+        elevation: 5
+    },
+    close:{
+        right: 5,
+        position: 'absolute',
+        top: 5,
+        fontFamily: 'sans-serif-medium',
+    }, 
+    bluebig:{
+        color: Colors.Blue,
+        fontSize: 20,
+        fontFamily: 'sans-serif-medium',
+        marginTop: 10
+    },
+    redsmall:{
+        fontFamily: 'sans-serif-medium',
+        color: Colors.Red,
+        fontSize: 15,
+        alignSelf: 'center',
+        marginTop: 10
+    },
+    grey:{
+        color: Colors.LightGrey,
+        fontSize: 12
+    },
+    input:{
+        borderBottomWidth: 1,
+        borderBottomColor: Colors.LightGrey,
+        color: Colors.Red,
+        fontSize: 20,
+        fontFamily: 'sans-serif-medium',
+        flex: 0.4
+    }
 })
 
 export default AuctionLiveBidding;
