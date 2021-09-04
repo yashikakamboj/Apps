@@ -131,6 +131,11 @@ const HomeScreen = (props) => {
               onPress={()=> props.navigation.navigate('car1') } >
               <Text style={styles.text}>Car BN (SavedCar)</Text>
           </TouchableOpacity>
+          <TouchableOpacity
+              style={styles.btn}
+              onPress={()=> props.navigation.navigate('car2') } >
+              <Text style={styles.text}>Car BN (rental Car)</Text>
+          </TouchableOpacity>
         </ScrollView>
         </SafeAreaView>
   );

@@ -27,6 +27,7 @@ import HomePage from './src/screens/CarBN/HomePage';
 import Payments from './src/screens/CarBN/Payments';
 import Notifications from './src/screens/CarBN/Notifications';
 import SavedCar from './src/screens/CarBN/SavedCar';
+import RentalCar from './src/screens/CarBN/RentalCar';
 
 const Navigation = createStackNavigator(
   {
@@ -56,6 +57,7 @@ const Navigation = createStackNavigator(
         Payments: Payments,
         Notifications: Notifications,
         car1: SavedCar,
+        car2: RentalCar,
   },
   {
         initialRouteName: "Home",
