@@ -3,6 +3,7 @@ import { FlatList } from 'react-native';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, Switch, ScrollView} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Colors from '../../../src/Constrants/Colors.js';
+import images from '../../Constrants/images.js';
 
 const Payments =()=>{
 
@@ -21,7 +22,7 @@ const Payments =()=>{
         return(
             <TouchableOpacity style={styles.container}>
                 <View style={styles.row1}>
-                    <Image style={styles.icon} source={require('../../../asserts/ic_account_balance_wallet_24px.png')} />
+                    <Image style={styles.icon} source={images.wallet} />
                     <Text style={styles.blue}>{item.amount}</Text>
                 </View>
                 <View style={styles.row2}>

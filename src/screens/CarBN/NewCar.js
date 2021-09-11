@@ -1,19 +1,23 @@
 import React, {useState, useEffect} from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, FlatList , ScrollView, Image, Dimensions} from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity , ScrollView, Image, Dimensions, } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { SliderBox } from "react-native-image-slider-box";
 import Colors from '../../../src/Constrants/Colors.js';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import images from '../../../src/Constrants/images'
+import images from '../../Constrants/images'
+import CheckBox from '@react-native-community/checkbox';
 
-const RentalCar =()=>{
+const NewCar =()=>{
 
     const [like, setLike] = useState(false)
     const [List1, setList1] = useState(false)
     const [List2, setList2] = useState(false)
+    const [isSelected1, setSelection1] = useState(false);
+    const [isSelected2, setSelection2] = useState(false);
+    const [isSelected3, setSelection3] = useState(false);
+    const [isSelected4, setSelection4] = useState(false);
     
-    const images= [
+    const image= [
         "https://source.unsplash.com/1024x768/?nature",
         "https://source.unsplash.com/1024x768/?water",
         "https://source.unsplash.com/1024x768/?girl",
@@ -23,7 +27,7 @@ const RentalCar =()=>{
     const ImageCard =()=>{
         return(
             <SliderBox
-                images={images}
+                images={image}
                 sliderBoxHeight={200}
                 dotColor={Colors.Blue}
                 inactiveDotColor="white"
@@ -67,6 +71,10 @@ const RentalCar =()=>{
         return(
             <View >
                 <Text style={styles.bluemedium}>Overview</Text>
+                <View style={[styles.row, {justifyContent:'flex-start'}]}>
+                    <Image source={images.icon21}/>
+                    <Text style={styles.black}> 40,000 Km</Text>
+                </View>
                 <View style={styles.wrap}>
                     <View style={styles.item}>
                         <Image style={styles.icon} source={images.icon1}/>
@@ -105,7 +113,7 @@ const RentalCar =()=>{
 
                 <View style={styles.box}>
                     <TouchableOpacity onPress={()=> {setList1(!List1)}} style={styles.row}>
-                        <Text style={List1? styles.open : styles.close}>Order refused</Text>
+                        <Text style={List1? styles.open : styles.close}>Features</Text>
                         { List1 ?
                         <AntDesign name="minus" size={30} color={Colors.Red}/> :
                         <AntDesign name="plus" size={30} color={Colors.Blue}/>
@@ -142,37 +150,35 @@ const RentalCar =()=>{
             
             <View style={styles.container}>
                 <View style={styles.row}>
-                    <Text style={styles.grey}>2018 Toyata C-HR 1.8</Text>
+                    <Text style={styles.grey}>2018 Toyata C-HR 1.81</Text>
                     <TouchableOpacity style={styles.likebutton} onPress={()=>{ setLike(!like) }}>
                         {like ? <Image style={styles.like} source={images.icon11}/>
                         : <Image style={styles.like} source={images.icon12}/> }
                     </TouchableOpacity>
                 </View>
 
-                <Text style={styles.blue}>$120/Day</Text>
-                <View style={[styles.row, {marginTop: 10}]}>
-                    <View>
-                        <Text style={styles.smallblue}>From</Text>
-                        <TouchableOpacity style={styles.btn}>
-                            <Text style={styles.smallgrey}>dd-mm-yy</Text>
-                            <Image style={styles.calculator} source={images.icon13}/>
-                        </TouchableOpacity>
-                    </View>
-                    <View>
-                        <Text style={styles.smallblue}>To</Text>
-                        <TouchableOpacity style={styles.btn}>
-                            <Text style={styles.smallgrey}>dd-mm-yy</Text>
-                            <Image style={styles.calculator} source={require('../../../asserts/475497.png')}/>
-                        </TouchableOpacity>
-                    </View>
-                    <TouchableOpacity style={styles.booknow}>
-                        <Text style={styles.white}>Book Now</Text>
-                    </TouchableOpacity>
+                <Text style={styles.blue}>$50,000</Text>
+                <View style={[styles.row, {justifyContent: 'flex-start'}]}>
+                    <Text style={styles.close}>$168 </Text>
+                    <Text>per month(PCP)</Text>
+                    <Image style={styles.calculator} source={images.icon19}/>
+
+                </View>
+
+                <Text style={styles.bluemedium}>Color</Text>
+                <View style={[styles.row, {justifyContent: 'flex-start'}]}>
+                    <CheckBox tintColor="black" value={isSelected1} onValueChange={(newValue) => setSelection1(newValue)} style={styles.checkbox1}/>
+                    <CheckBox tintColor="black" value={isSelected2} onValueChange={(newValue) => setSelection2(newValue)} style={styles.checkbox2}/>
+                    <CheckBox tintColor="black" value={isSelected3} onValueChange={(newValue) => setSelection3(newValue)} style={styles.checkbox3}/>
+                    <CheckBox tintColor="black" value={isSelected4} onValueChange={(newValue) => setSelection4(newValue)} style={styles.checkbox4}/>
+
                 </View>
 
                 <ChatDatail />
+
                 <OverView />
                 <Specification />
+
 
             </View>
         </ScrollView>
@@ -182,7 +188,7 @@ const RentalCar =()=>{
 
 const styles = StyleSheet.create({
     main:{
-        flex: 1
+        flex: 1, //backgroundColor: 'pink'
     },
     paginationBoxStyle:{
         //position: "absolute",
@@ -192,6 +198,25 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         justifyContent: "center",
     },
+    checkbox1: {
+        alignSelf: "center",
+        backgroundColor: 'blue',
+        marginRight: 10
+      },
+      checkbox2: {
+        alignSelf: "center",
+        backgroundColor: 'green',
+        marginRight: 10
+      },
+      checkbox3: {
+        alignSelf: "center",
+        backgroundColor: 'red',
+        marginRight: 10
+      },
+      checkbox4: {
+        alignSelf: "center",
+        backgroundColor: 'purple',
+      },
     dotStyle:{
         width: 10,
         height: 10,
@@ -248,10 +273,11 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%'
     }, 
-    blue:{
-        color: Colors.Blue,
-        fontSize: 22,
+    white:{
+        color: 'white',
+        fontSize: 15,
         fontFamily: 'sans-serif-medium',
+        backgroundColor: Colors.Blue,
     },
     grey:{
         color: Colors.LightGrey,
@@ -268,7 +294,9 @@ const styles = StyleSheet.create({
         fontFamily: 'sans-serif-medium',
     },
     calculator:{
-         marginLeft: 5
+         marginLeft: 5,
+         //height: 20,
+         //width: 20
     },
     smallblue:{
         color: Colors.Blue,
@@ -280,21 +308,26 @@ const styles = StyleSheet.create({
         shadowColor: '#3D3D3D',
         borderRadius: 5,
         backgroundColor: 'white',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         flexDirection: 'row',
-        paddingHorizontal: 10,
-        paddingVertical: 5,
-        marginTop: 7
+        paddingHorizontal: 60,
+        paddingVertical: 3,
+        marginTop: 7,
+        borderColor: Colors.Blue,
+        borderWidth: 1.5
     },
-    booknow:{
+    bid:{
         backgroundColor: Colors.Blue,
-        borderRadius: 20,
-        paddingHorizontal: 10,
-        paddingVertical: 5,
-        alignSelf: 'flex-end'
+        borderRadius: 5,
+        paddingHorizontal:7,
+        paddingVertical: 10,
+        alignSelf: 'flex-end',
+        flexDirection: 'row',
     },
-    white:{
-        color: 'white'
+    blue:{
+        color: Colors.Blue,
+        fontSize: 23,
+        fontFamily: 'sans-serif-medium',
     },
     img:{
         height: 55,
@@ -367,6 +400,30 @@ const styles = StyleSheet.create({
     close:{
         color: Colors.Blue,
         fontFamily: 'sans-serif-medium',
-    }
+    },
+    red:{
+        color: Colors.Red,
+        fontFamily: 'sans-serif-medium',
+        padding: 3,
+        fontSize: 20
+    },
+    report:{
+        backgroundColor: Colors.Blue,
+        borderRadius: 50,
+        paddingHorizontal:15,
+        paddingVertical: 10,
+        alignSelf: 'flex-end',
+        flexDirection: 'row',
+    },
+    chat:{
+        backgroundColor: Colors.Blue,
+        borderTopLeftRadius: 50,
+        borderTopRightRadius: 50,
+        borderBottomLeftRadius: 50,
+        paddingHorizontal:15,
+        paddingVertical: 10,
+        alignSelf: 'flex-end',
+        flexDirection: 'row',
+    },
 })
-export default RentalCar;
+export default NewCar;

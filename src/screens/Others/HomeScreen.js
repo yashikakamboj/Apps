@@ -141,6 +141,22 @@ const HomeScreen = (props) => {
               onPress={()=> props.navigation.navigate('Calculator') } >
               <Text style={styles.text}>Car BN (Calculator)</Text>
           </TouchableOpacity>
+          <TouchableOpacity
+              style={styles.btn}
+              onPress={()=> props.navigation.navigate('car3') } >
+              <Text style={styles.text}>Car BN (AuctionLive)</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+              style={styles.btn}
+              onPress={()=> props.navigation.navigate('car4') } >
+              <Text style={styles.text}>Car BN (Old Car)</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+              style={styles.btn}
+              onPress={()=> props.navigation.navigate('car5') } >
+              <Text style={styles.text}>Car BN (New Car)</Text>
+          </TouchableOpacity>
+
         </ScrollView>
         </SafeAreaView>
   );

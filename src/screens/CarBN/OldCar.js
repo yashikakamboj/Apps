@@ -4,16 +4,17 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { SliderBox } from "react-native-image-slider-box";
 import Colors from '../../../src/Constrants/Colors.js';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import images from '../../../src/Constrants/images'
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import images from '../../Constrants/images'
 
-const RentalCar =()=>{
+
+const OldCar =()=>{
 
     const [like, setLike] = useState(false)
     const [List1, setList1] = useState(false)
     const [List2, setList2] = useState(false)
     
-    const images= [
+    const image= [
         "https://source.unsplash.com/1024x768/?nature",
         "https://source.unsplash.com/1024x768/?water",
         "https://source.unsplash.com/1024x768/?girl",
@@ -23,7 +24,7 @@ const RentalCar =()=>{
     const ImageCard =()=>{
         return(
             <SliderBox
-                images={images}
+                images={image}
                 sliderBoxHeight={200}
                 dotColor={Colors.Blue}
                 inactiveDotColor="white"
@@ -67,6 +68,10 @@ const RentalCar =()=>{
         return(
             <View >
                 <Text style={styles.bluemedium}>Overview</Text>
+                <View style={[styles.row, {justifyContent:'flex-start'}]}>
+                    <Image source={images.icon21}/>
+                    <Text style={styles.black}> 40,000 Km</Text>
+                </View>
                 <View style={styles.wrap}>
                     <View style={styles.item}>
                         <Image style={styles.icon} source={images.icon1}/>
@@ -105,7 +110,7 @@ const RentalCar =()=>{
 
                 <View style={styles.box}>
                     <TouchableOpacity onPress={()=> {setList1(!List1)}} style={styles.row}>
-                        <Text style={List1? styles.open : styles.close}>Order refused</Text>
+                        <Text style={List1? styles.open : styles.close}>Features</Text>
                         { List1 ?
                         <AntDesign name="minus" size={30} color={Colors.Red}/> :
                         <AntDesign name="plus" size={30} color={Colors.Blue}/>
@@ -142,37 +147,48 @@ const RentalCar =()=>{
             
             <View style={styles.container}>
                 <View style={styles.row}>
-                    <Text style={styles.grey}>2018 Toyata C-HR 1.8</Text>
+                    <Text style={styles.grey}>2018 Toyata C-HR 1.81</Text>
                     <TouchableOpacity style={styles.likebutton} onPress={()=>{ setLike(!like) }}>
                         {like ? <Image style={styles.like} source={images.icon11}/>
                         : <Image style={styles.like} source={images.icon12}/> }
                     </TouchableOpacity>
                 </View>
 
-                <Text style={styles.blue}>$120/Day</Text>
-                <View style={[styles.row, {marginTop: 10}]}>
-                    <View>
-                        <Text style={styles.smallblue}>From</Text>
-                        <TouchableOpacity style={styles.btn}>
-                            <Text style={styles.smallgrey}>dd-mm-yy</Text>
-                            <Image style={styles.calculator} source={images.icon13}/>
-                        </TouchableOpacity>
-                    </View>
-                    <View>
-                        <Text style={styles.smallblue}>To</Text>
-                        <TouchableOpacity style={styles.btn}>
-                            <Text style={styles.smallgrey}>dd-mm-yy</Text>
-                            <Image style={styles.calculator} source={require('../../../asserts/475497.png')}/>
-                        </TouchableOpacity>
-                    </View>
-                    <TouchableOpacity style={styles.booknow}>
-                        <Text style={styles.white}>Book Now</Text>
-                    </TouchableOpacity>
+                <Text style={styles.blue}>$50,000</Text>
+                <View style={[styles.row, {justifyContent: 'flex-start'}]}>
+                    <Text style={styles.close}>$168 </Text>
+                    <Text>per month(PCP)</Text>
+                    <Image style={styles.calculator} source={images.icon19}/>
+                    <Image style={styles.calculator} source={images.icon20}/>
                 </View>
 
                 <ChatDatail />
+
+                <View style={[styles.row, {marginTop: 10}]}>
+                    <View>
+                        <TouchableOpacity style={styles.btn}>
+                            <Text style={styles.red}>$49,000</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <TouchableOpacity style={styles.bid}>
+                        <Text style={styles.white}>Make Offer</Text>
+                    </TouchableOpacity>
+                </View>
+
                 <OverView />
                 <Specification />
+
+                <View style={[styles.row, {marginTop: 10}]}>
+                    <View style={styles.row}>
+                        <TouchableOpacity style={styles.report}>
+                            <FontAwesome name="file-text" size={20} color="white"/>
+                            <Text style={styles.white}>  Inspection Report</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <TouchableOpacity style={styles.chat}>
+                        <Text style={styles.white}>Quick Chat</Text>
+                    </TouchableOpacity>
+                </View>
 
             </View>
         </ScrollView>
@@ -248,10 +264,11 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%'
     }, 
-    blue:{
-        color: Colors.Blue,
-        fontSize: 22,
+    white:{
+        color: 'white',
+        fontSize: 15,
         fontFamily: 'sans-serif-medium',
+        backgroundColor: Colors.Blue,
     },
     grey:{
         color: Colors.LightGrey,
@@ -268,7 +285,9 @@ const styles = StyleSheet.create({
         fontFamily: 'sans-serif-medium',
     },
     calculator:{
-         marginLeft: 5
+         marginLeft: 5,
+         //height: 20,
+         //width: 20
     },
     smallblue:{
         color: Colors.Blue,
@@ -280,21 +299,21 @@ const styles = StyleSheet.create({
         shadowColor: '#3D3D3D',
         borderRadius: 5,
         backgroundColor: 'white',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         flexDirection: 'row',
-        paddingHorizontal: 10,
-        paddingVertical: 5,
-        marginTop: 7
+        paddingHorizontal: 60,
+        paddingVertical: 3,
+        marginTop: 7,
+        borderColor: Colors.Blue,
+        borderWidth: 1.5
     },
-    booknow:{
+    bid:{
         backgroundColor: Colors.Blue,
-        borderRadius: 20,
-        paddingHorizontal: 10,
-        paddingVertical: 5,
-        alignSelf: 'flex-end'
-    },
-    white:{
-        color: 'white'
+        borderRadius: 5,
+        paddingHorizontal:7,
+        paddingVertical: 10,
+        alignSelf: 'flex-end',
+        flexDirection: 'row',
     },
     img:{
         height: 55,
@@ -329,6 +348,11 @@ const styles = StyleSheet.create({
     bluesmall:{
         color: Colors.Blue,
         fontSize: 10
+    },
+    blue:{
+        color: Colors.Blue,
+        fontSize: 23,
+        fontFamily: 'sans-serif-medium',
     },
     bluemedium: {
         color: Colors.Blue,
@@ -367,6 +391,30 @@ const styles = StyleSheet.create({
     close:{
         color: Colors.Blue,
         fontFamily: 'sans-serif-medium',
-    }
+    },
+    red:{
+        color: Colors.Red,
+        fontFamily: 'sans-serif-medium',
+        padding: 3,
+        fontSize: 20
+    },
+    report:{
+        backgroundColor: Colors.Blue,
+        borderRadius: 50,
+        paddingHorizontal:15,
+        paddingVertical: 10,
+        alignSelf: 'flex-end',
+        flexDirection: 'row',
+    },
+    chat:{
+        backgroundColor: Colors.Blue,
+        borderTopLeftRadius: 50,
+        borderTopRightRadius: 50,
+        borderBottomLeftRadius: 50,
+        paddingHorizontal:15,
+        paddingVertical: 10,
+        alignSelf: 'flex-end',
+        flexDirection: 'row',
+    },
 })
-export default RentalCar;
+export default OldCar;

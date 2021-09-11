@@ -5,7 +5,8 @@ import { SliderBox } from "react-native-image-slider-box";
 import Colors from '../../../src/Constrants/Colors.js';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import images from '../../../src/Constrants/images'
+import images from '../../Constrants/images'
+
 
 const RentalCar =()=>{
 
@@ -13,7 +14,7 @@ const RentalCar =()=>{
     const [List1, setList1] = useState(false)
     const [List2, setList2] = useState(false)
     
-    const images= [
+    const image= [
         "https://source.unsplash.com/1024x768/?nature",
         "https://source.unsplash.com/1024x768/?water",
         "https://source.unsplash.com/1024x768/?girl",
@@ -23,7 +24,7 @@ const RentalCar =()=>{
     const ImageCard =()=>{
         return(
             <SliderBox
-                images={images}
+                images={image}
                 sliderBoxHeight={200}
                 dotColor={Colors.Blue}
                 inactiveDotColor="white"
@@ -67,6 +68,10 @@ const RentalCar =()=>{
         return(
             <View >
                 <Text style={styles.bluemedium}>Overview</Text>
+                <View style={[styles.row, {justifyContent:'flex-start'}]}>
+                    <Image source={images.icon21}/>
+                    <Text style={styles.black}> 40,000 Km</Text>
+                </View>
                 <View style={styles.wrap}>
                     <View style={styles.item}>
                         <Image style={styles.icon} source={images.icon1}/>
@@ -105,7 +110,7 @@ const RentalCar =()=>{
 
                 <View style={styles.box}>
                     <TouchableOpacity onPress={()=> {setList1(!List1)}} style={styles.row}>
-                        <Text style={List1? styles.open : styles.close}>Order refused</Text>
+                        <Text style={List1? styles.open : styles.close}>Features</Text>
                         { List1 ?
                         <AntDesign name="minus" size={30} color={Colors.Red}/> :
                         <AntDesign name="plus" size={30} color={Colors.Blue}/>
@@ -142,31 +147,30 @@ const RentalCar =()=>{
             
             <View style={styles.container}>
                 <View style={styles.row}>
-                    <Text style={styles.grey}>2018 Toyata C-HR 1.8</Text>
+                    <Text style={styles.grey}>2018 Toyata C-HR 1.81</Text>
                     <TouchableOpacity style={styles.likebutton} onPress={()=>{ setLike(!like) }}>
                         {like ? <Image style={styles.like} source={images.icon11}/>
                         : <Image style={styles.like} source={images.icon12}/> }
                     </TouchableOpacity>
                 </View>
 
-                <Text style={styles.blue}>$120/Day</Text>
+                <Text style={styles.blue}>$50,000</Text>
+                <View style={[styles.row, {justifyContent: 'flex-start'}]}>
+                    <Text style={styles.close}>$168 </Text>
+                    <Text>per month(PCP)</Text>
+                    <Image style={styles.calculator} source={images.icon19}/>
+                    <Image style={styles.calculator} source={images.icon20}/>
+                </View>
                 <View style={[styles.row, {marginTop: 10}]}>
                     <View>
-                        <Text style={styles.smallblue}>From</Text>
+                        <Text style={styles.smallblue}>Auction Ends in</Text>
                         <TouchableOpacity style={styles.btn}>
-                            <Text style={styles.smallgrey}>dd-mm-yy</Text>
-                            <Image style={styles.calculator} source={images.icon13}/>
+                            <Text style={styles.red}>00 Hours - 45 Minutes - 26 Seconds</Text>
                         </TouchableOpacity>
                     </View>
-                    <View>
-                        <Text style={styles.smallblue}>To</Text>
-                        <TouchableOpacity style={styles.btn}>
-                            <Text style={styles.smallgrey}>dd-mm-yy</Text>
-                            <Image style={styles.calculator} source={require('../../../asserts/475497.png')}/>
-                        </TouchableOpacity>
-                    </View>
-                    <TouchableOpacity style={styles.booknow}>
-                        <Text style={styles.white}>Book Now</Text>
+                    <TouchableOpacity style={styles.bid}>
+                        <Image style={styles.calculator} source={images.icon22}/>
+                        <Text style={styles.blue}>Bid</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -268,7 +272,9 @@ const styles = StyleSheet.create({
         fontFamily: 'sans-serif-medium',
     },
     calculator:{
-         marginLeft: 5
+         marginLeft: 5,
+         //height: 20,
+         //width: 20
     },
     smallblue:{
         color: Colors.Blue,
@@ -286,15 +292,13 @@ const styles = StyleSheet.create({
         paddingVertical: 5,
         marginTop: 7
     },
-    booknow:{
-        backgroundColor: Colors.Blue,
-        borderRadius: 20,
+    bid:{
+        backgroundColor: 'white',
+        borderRadius: 10,
         paddingHorizontal: 10,
         paddingVertical: 5,
-        alignSelf: 'flex-end'
-    },
-    white:{
-        color: 'white'
+        alignSelf: 'flex-end',
+        flexDirection: 'row',
     },
     img:{
         height: 55,
@@ -367,6 +371,11 @@ const styles = StyleSheet.create({
     close:{
         color: Colors.Blue,
         fontFamily: 'sans-serif-medium',
+    },
+    red:{
+        color: Colors.Red,
+        fontFamily: 'sans-serif-medium',
+        padding: 3
     }
 })
 export default RentalCar;

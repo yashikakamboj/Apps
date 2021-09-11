@@ -29,6 +29,9 @@ import Notifications from './src/screens/CarBN/Notifications';
 import SavedCar from './src/screens/CarBN/SavedCar';
 import RentalCar from './src/screens/CarBN/RentalCar';
 import Calculator from './src/screens/CarBN/Calulator';
+import AuctionLive from './src/screens/CarBN/AuctionLive';
+import OldCar from './src/screens/CarBN/OldCar';
+import NewCar from './src/screens/CarBN/NewCar';
 
 const Navigation = createStackNavigator(
   {
@@ -60,6 +63,9 @@ const Navigation = createStackNavigator(
         car1: SavedCar,
         car2: RentalCar,
         Calculator: Calculator,
+        car3: AuctionLive,
+        car4: OldCar,
+        car5: NewCar,
   },
   {
         initialRouteName: "Home",
