@@ -24,5 +24,10 @@ const images ={
     icon20: require('../../asserts/info.png'),
     icon21: require('../../asserts/meter.png'),
     icon22: require('../../asserts/2370794-2001345.png'),
+    icon23: require('../../asserts/Auction-PNG-Photo.png'),
+    icon24: require('../../asserts/Group81.png'),
+    icon25: require('../../asserts/Group82.png'),
+    icon26: require('../../asserts/Group83.png'),
+    icon27: require('../../asserts/Group84.png'),
 }
 export default images;

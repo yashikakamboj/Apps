@@ -32,6 +32,7 @@ import Calculator from './src/screens/CarBN/Calulator';
 import AuctionLive from './src/screens/CarBN/AuctionLive';
 import OldCar from './src/screens/CarBN/OldCar';
 import NewCar from './src/screens/CarBN/NewCar';
+import Search from './src/screens/CarBN/Search';
 
 const Navigation = createStackNavigator(
   {
@@ -66,6 +67,7 @@ const Navigation = createStackNavigator(
         car3: AuctionLive,
         car4: OldCar,
         car5: NewCar,
+        car6: Search,
   },
   {
         initialRouteName: "Home",

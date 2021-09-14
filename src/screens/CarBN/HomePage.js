@@ -8,24 +8,25 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { SliderBox } from "react-native-image-slider-box";
 import Colors from '../../../src/Constrants/Colors.js';
+import images from '../../Constrants/images';
 
 const HomePage =()=>{
 
     const data1 = [
-        {title: 'One', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida eros magna, ut aliquet lectus imperdiet et. Donec nec augue posuere, gravida est id, gravida nunc. Vivamus enim odio, gravida id neque eget, malesuada convallis est.', image: 'https://source.unsplash.com/1024x768/?tree'},
-        {title: 'Two', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida eros magna, ut aliquet lectus imperdiet et. Donec nec augue posuere, gravida est id, gravida nunc. Vivamus enim odio, gravida id neque eget, malesuada convallis est.', image: 'https://source.unsplash.com/1024x768/?nature'},
-        {title: 'Three', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida eros magna, ut aliquet lectus imperdiet et. Donec nec augue posuere, gravida est id, gravida nunc. Vivamus enim odio, gravida id neque eget, malesuada convallis est.', image: 'https://source.unsplash.com/1024x768/?girl'},
-        {title: 'Four', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida eros magna, ut aliquet lectus imperdiet et. Donec nec augue posuere, gravida est id, gravida nunc. Vivamus enim odio, gravida id neque eget, malesuada convallis est.', image: 'https://source.unsplash.com/1024x768/?water'},
+        {title: 'One', id: '1', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida eros magna, ut aliquet lectus imperdiet et. Donec nec augue posuere, gravida est id, gravida nunc. Vivamus enim odio, gravida id neque eget, malesuada convallis est.', image: 'https://source.unsplash.com/1024x768/?tree'},
+        {title: 'Two', id: '2', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida eros magna, ut aliquet lectus imperdiet et. Donec nec augue posuere, gravida est id, gravida nunc. Vivamus enim odio, gravida id neque eget, malesuada convallis est.', image: 'https://source.unsplash.com/1024x768/?nature'},
+        {title: 'Three', id: '3', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida eros magna, ut aliquet lectus imperdiet et. Donec nec augue posuere, gravida est id, gravida nunc. Vivamus enim odio, gravida id neque eget, malesuada convallis est.', image: 'https://source.unsplash.com/1024x768/?girl'},
+        {title: 'Four', id: '4', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida eros magna, ut aliquet lectus imperdiet et. Donec nec augue posuere, gravida est id, gravida nunc. Vivamus enim odio, gravida id neque eget, malesuada convallis est.', image: 'https://source.unsplash.com/1024x768/?water'},
     ]
 
     const data2 = [
-        {title: 'One', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida eros magna, ut aliquet lectus imperdiet et. Donec nec augue posuere, gravida est id, gravida nunc. Vivamus enim odio, gravida id neque eget, malesuada convallis est.', image: 'https://source.unsplash.com/1024x768/?water'},
-        {title: 'Two', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida eros magna, ut aliquet lectus imperdiet et. Donec nec augue posuere, gravida est id, gravida nunc. Vivamus enim odio, gravida id neque eget, malesuada convallis est.', image: 'https://source.unsplash.com/1024x768/?girl'},
-        {title: 'Three', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida eros magna, ut aliquet lectus imperdiet et. Donec nec augue posuere, gravida est id, gravida nunc. Vivamus enim odio, gravida id neque eget, malesuada convallis est.', image: 'https://source.unsplash.com/1024x768/?nature'},
-        {title: 'Four', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida eros magna, ut aliquet lectus imperdiet et. Donec nec augue posuere, gravida est id, gravida nunc. Vivamus enim odio, gravida id neque eget, malesuada convallis est.', image: 'https://source.unsplash.com/1024x768/?tree'},
+        {title: 'One', id: '1', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida eros magna, ut aliquet lectus imperdiet et. Donec nec augue posuere, gravida est id, gravida nunc. Vivamus enim odio, gravida id neque eget, malesuada convallis est.', image: 'https://source.unsplash.com/1024x768/?water'},
+        {title: 'Two', id: '2', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida eros magna, ut aliquet lectus imperdiet et. Donec nec augue posuere, gravida est id, gravida nunc. Vivamus enim odio, gravida id neque eget, malesuada convallis est.', image: 'https://source.unsplash.com/1024x768/?girl'},
+        {title: 'Three', id: '3', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida eros magna, ut aliquet lectus imperdiet et. Donec nec augue posuere, gravida est id, gravida nunc. Vivamus enim odio, gravida id neque eget, malesuada convallis est.', image: 'https://source.unsplash.com/1024x768/?nature'},
+        {title: 'Four', id: '4', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida eros magna, ut aliquet lectus imperdiet et. Donec nec augue posuere, gravida est id, gravida nunc. Vivamus enim odio, gravida id neque eget, malesuada convallis est.', image: 'https://source.unsplash.com/1024x768/?tree'},
     ]
 
-    const images= [
+    const image= [
         "https://source.unsplash.com/1024x768/?nature",
         "https://source.unsplash.com/1024x768/?water",
         "https://source.unsplash.com/1024x768/?girl",
@@ -35,6 +36,9 @@ const HomePage =()=>{
     const renderitems1 =({item})=>{
         return(
             <View style={styles.outerbox}>
+                <View style={styles.rating}>
+                    <Text style={styles.w}>{item.id}</Text>
+                </View>
                 <Image style={styles.image} source={{uri: item.image}}/>
                 <View style={styles.innerbox}>
                     <Text style={styles.title}>{item.title}</Text>
@@ -47,6 +51,9 @@ const HomePage =()=>{
     const renderitems2 =({item})=>{
         return(
             <View style={styles.outerbox}>
+                <View style={styles.rating}>
+                    <Text style={styles.w}>{item.id}</Text>
+                </View>
                 <Image style={styles.image} source={{uri: item.image}}/>
                 <View style={styles.innerbox}>
                     <Text style={styles.title}>{item.title}</Text>
@@ -59,7 +66,7 @@ const HomePage =()=>{
     const ImageCard =()=>{
         return(
                 <SliderBox
-                images={images}
+                images={image}
                 sliderBoxHeight={450}
                 dotColor={Colors.Blue}
                 inactiveDotColor="white"
@@ -79,6 +86,12 @@ const HomePage =()=>{
         return(
             <View style={styles.row}>
                     <View>
+                        <TouchableOpacity style={styles.redButton}>
+                            <EvilIcons name="refresh" color="white" size={45}/>
+                        </TouchableOpacity>
+                        <Text style={styles.btntext}>Used</Text>
+                    </View>
+                    <View>
                         <TouchableOpacity style={styles.blueButton}>
                             <AntDesign name="star" color="white" size={25}/>
                         </TouchableOpacity>
@@ -86,19 +99,19 @@ const HomePage =()=>{
                     </View>
                     <View>
                         <TouchableOpacity style={styles.orangeButton}>
-                            <EvilIcons name="refresh" color="white" size={45}/>
-                        </TouchableOpacity>
-                        <Text style={styles.btntext}>Used</Text>
-                    </View>
-                    <View>
-                        <TouchableOpacity style={styles.redButton}>
                             <Entypo name="key" color="white" size={25}/>
                         </TouchableOpacity>
                         <Text style={styles.btntext}>Rent</Text>
                     </View>
                     <View>
+                        <TouchableOpacity style={styles.turquoiseButton}>
+                            <AntDesign name="star" color="white" size={25}/>
+                        </TouchableOpacity>
+                        <Text style={styles.btntext}>Sell</Text>
+                    </View>
+                    <View>
                         <TouchableOpacity style={styles.purpleButton}>
-                            <FontAwesome name="thumbs-up" color="white" size={25}/>
+                            <Image source={images.icon23} style={styles.auction}/>
                         </TouchableOpacity>
                         <Text style={styles.btntext}>Auction</Text>
                     </View>
@@ -110,7 +123,7 @@ const HomePage =()=>{
         return(
             <View style={styles.smallCard}>
                 <View style={styles.circle}>
-                    <Ionicons name={icon} color="white" size={30}/>
+                    <Image source={icon} s/>
                 </View>
                 <View style={styles.Rectangle}>
                     <Text style={styles.whiteText}>{text}</Text>
@@ -125,10 +138,10 @@ const HomePage =()=>{
                 <Text style={styles.head}>Why Use CarsBN?</Text>
                 <Text style={styles.body}>It is a long established fact that a reader will be distracted by readable content of a page when looking as its layout.</Text>
                 <View style={styles.rowButton}>
-                    <SmallCard text={"175 Inspection Point"} icon= {"ios-car-sport"}/>
-                    <SmallCard text={"Fixed Price, No Hidden Fees"} icon= {"ios-lock-closed"}/>
-                    <SmallCard text={"1 Year Warranty"} icon= {"ios-car-sport"}/>
-                    <SmallCard text={"5 Day Money BAck Guarantee"} icon= {"ios-car-sport"}/>
+                    <SmallCard text={"175 Inspection Point"} icon={images.icon24}/>
+                    <SmallCard text={"Fixed Price, No Hidden Fees"} icon= {images.icon25}/>
+                    <SmallCard text={"1 Year Warranty"} icon= {images.icon26}/>
+                    <SmallCard text={"5 Day Money BAck Guarantee"} icon= {images.icon27}/>
                 </View>
             </View>
         )
@@ -206,6 +219,14 @@ const styles = StyleSheet.create({
     },
     redButton: {
         backgroundColor: Colors.Red,
+        height: 70,
+        width: 70,
+        borderRadius: 20,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    turquoiseButton:{
+        backgroundColor: '#00ffef',
         height: 70,
         width: 70,
         borderRadius: 20,
@@ -313,10 +334,32 @@ const styles = StyleSheet.create({
     title:{
         color: 'black',
         fontFamily: 'sans-serif-medium',
-        fontSize: 15
+        fontSize: 15,
+        marginTop: 10
     },
     paragraph:{
         fontSize: 11
+    },
+    auction:{
+        height: 40,
+        width: 40,
+    },
+    rating:{
+        position: 'absolute',
+        backgroundColor: Colors.Blue,
+        borderRadius: 100,
+        top: 135,
+        left: 10,
+        zIndex: 1,
+        height: 30,
+        width: 30,
+        justifyContent: 'center'
+    },
+    w:{
+        color: 'white',
+        alignSelf: 'center',
+        fontFamily: 'sans-serif-medium',
+        fontSize: 18
     }
 })
 
